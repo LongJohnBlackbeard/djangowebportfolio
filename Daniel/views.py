@@ -16,18 +16,33 @@ def index(request, success_alert=False):
             print('invalid form')
 
     # Home
-    home = Home.objects.latest('updated')
+    try:
+        home = Home.objects.latest('updated')
+    except Home.DoesNotExist:
+        home = None
 
     # About
-    about = About.objects.latest('updated')
+    try:
+        about = About.objects.latest('updated')
+    except About.DoesNotExist:
+        about = None
 
     # Profile
-    profiles = Profile.objects.filter(about=about)
+    try:
+        profiles = Profile.objects.filter(about=about)
+    except Profile.DoesNotExist:
+        profiles = None
 
     # Skills
-    categories = Category.objects.all()
+    try:
+        categories = Category.objects.all()
+    except Category.DoesNotExist:
+        categories = None
 
-    portfolios = Portfolio.objects.all()
+    try:
+        portfolios = Portfolio.objects.all()
+    except Portfolio.DoesNotExist:
+        portfolios = None
 
     form = ContactForm()
     success_alert = request.session.get('success_alert')
