@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['danieltujo.azurewebsites.net']
+ALLOWED_HOSTS = ['danieltujo.azurewebsites.net', 'danieltujo.com']
 CSRF_TRUSTED_ORIGINS = [
     'https://danieltujo.azurewebsites.net', 'danieltujo.com']
 
