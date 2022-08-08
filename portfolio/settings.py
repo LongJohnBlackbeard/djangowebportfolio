@@ -30,7 +30,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ['danieltujo.azurewebsites.net']
-CSRF_TRUSTED_ORIGINS = ['https://danieltujo.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS = [
+    'https://danieltujo.azurewebsites.net', 'danieltujo.com']
 
 # ALLOWED_HOSTS = []
 
